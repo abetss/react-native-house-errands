@@ -24,7 +24,7 @@ const initialState = [
   { text: "Don't sleep tonight", status: TODO_STATUS.TODO, id: 4 },
 ];
 
-export default class TodoMain extends React.Component {
+export class TodoMain extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

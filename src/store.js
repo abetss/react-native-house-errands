@@ -1,19 +1,14 @@
-import { keys } from "ramda";
-import { createStore, applyMiddleware, compose } from "redux";
-import { createEpicMiddleware } from "redux-observable";
-import { persistStore, persistCombineReducers } from "redux-persist";
-import { routerMiddleware } from "react-router-redux";
-import storage from "redux-persist/es/storage";
 import { createLogger } from "redux-logger";
-import createHistory from "history/createBrowserHistory";
+import { keys } from "ramda";
+import { createStore, applyMiddleware, combineReducers } from "redux";
+import { composeWithDevTools } from "remote-redux-devtools";
 
-import { rootEpic } from "./epic";
 import { reducers } from "./reducer";
-import { devMode, localMode } from "./core";
+
+const devMode = true;
+const localMode = true;
 
 const showDevTools = devMode || localMode;
-
-const history = createHistory();
 
 const colors = {
   default: "#383838",
@@ -41,7 +36,7 @@ const mapColor = () => {
 };
 
 function _getMiddleware() {
-  let middleware = [createEpicMiddleware(rootEpic), routerMiddleware(history)];
+  let middleware = [];
   const cachedColorMapper = mapColor();
   if (showDevTools) {
     const logger = createLogger({
@@ -63,41 +58,13 @@ function _getMiddleware() {
 
 function _getEnhancers() {
   let enhancers = [];
-
-  if (showDevTools && window.devToolsExtension) {
-    enhancers = [...enhancers, window.devToolsExtension()];
-  }
-
   return enhancers;
 }
 
-function _enableHotLoader(store) {
-  if (localMode && module.hot) {
-    module.hot.accept("./reducer", () => {
-      const nextRootReducer = require("./reducer");
-      store.replaceReducer(nextRootReducer);
-    });
-  }
-}
+export const configureStore = initialState => {
+  const store = composeWithDevTools(_getMiddleware(), ..._getEnhancers())(
+    createStore,
+  )(combineReducers(reducers), initialState);
 
-function _createPersistedReducer(reducers) {
-  const persistConfig = {
-    key: "root",
-    storage,
-    whitelist: ["session"],
-  };
-
-  return persistCombineReducers(persistConfig, reducers);
-}
-
-export const configureStore = (initialState: any) => {
-  const store = compose(_getMiddleware(), ..._getEnhancers())(createStore)(
-    _createPersistedReducer(reducers),
-    initialState,
-  );
-
-  const persistor = persistStore(store);
-
-  _enableHotLoader(store);
-  return { store, persistor, history };
+  return { store };
 };

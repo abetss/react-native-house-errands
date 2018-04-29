@@ -36,7 +36,7 @@ const ROW_HEIGHT = 40;
 
 const styles = StyleSheet.create({
   row: {
-    backgroundColor: "#f9f9ac",
+    backgroundColor: "#fff",
     paddingLeft: 5,
     paddingRight: 5,
     flexDirection: "row",
