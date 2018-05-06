@@ -1,4 +1,4 @@
-import { todoReducer } from "./feature/todo/logic";
+import { todoReducer } from './feature/todo/logic';
 
 export const reducers = {
   todo: todoReducer,

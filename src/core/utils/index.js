@@ -1,2 +1,2 @@
-export * from "./store.utils";
-export * from "./object";
+export * from './store.utils';
+export * from './object';

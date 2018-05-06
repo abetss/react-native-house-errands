@@ -32,13 +32,17 @@
     "js-lint": "node node_modules/eslint/bin/eslint.js src --max-warnings=0",
     "eslint": "eslint",
     "postinstall": "rnpm link",
-    "devtools": "react-devtools"
+    "devtools": "react-devtools",
+    "prettier-opts": "prettier --write",
+    "format": "yarn prettier-opts './src/**/*.js'"
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "@expo/vector-icons": "^6.3.1",
     "expo": "^26.0.0",
+    "native-base": "^2.4.3",
     "ramda": "^0.25.0",
     "react": "16.3.0-alpha.1",
     "react-native": "^0.54.0",

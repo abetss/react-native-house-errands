@@ -1,9 +1,9 @@
-import { createLogger } from "redux-logger";
-import { keys } from "ramda";
-import { createStore, applyMiddleware, combineReducers } from "redux";
-import { composeWithDevTools } from "remote-redux-devtools";
+import { createLogger } from 'redux-logger';
+import { keys } from 'ramda';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'remote-redux-devtools';
 
-import { reducers } from "./reducer";
+import { reducers } from './reducer';
 
 const devMode = true;
 const localMode = true;
@@ -11,14 +11,14 @@ const localMode = true;
 const showDevTools = devMode || localMode;
 
 const colors = {
-  default: "#383838",
-  clear_: "#7C394B",
-  _error: "#E33231",
-  _success: "#4CAF50",
-  _start: "#03A9F4",
-  undefined: "#8ADBDE",
-  gigya: "#B25FD6",
-  redirect: "#12505F",
+  default: '#383838',
+  clear_: '#7C394B',
+  _error: '#E33231',
+  _success: '#4CAF50',
+  _start: '#03A9F4',
+  undefined: '#8ADBDE',
+  gigya: '#B25FD6',
+  redirect: '#12505F',
 };
 const mapColor = () => {
   const colorCache = {};
@@ -44,10 +44,10 @@ function _getMiddleware() {
       duration: true,
       colors: {
         title: action => action.type && cachedColorMapper(action.type),
-        prevState: () => "#E33231",
-        action: () => "#03A9F4",
-        nextState: () => "#4CAF50",
-        error: () => "#E33231",
+        prevState: () => '#E33231',
+        action: () => '#03A9F4',
+        nextState: () => '#4CAF50',
+        error: () => '#E33231',
       },
     });
     middleware = [...middleware, logger];

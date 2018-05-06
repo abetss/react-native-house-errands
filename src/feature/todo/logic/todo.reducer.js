@@ -1,12 +1,12 @@
-import { todoStatus, todoActions } from "./todo.constant";
+import { todoStatus, todoActions } from './todo.constant';
 
-import { makeOverwrite } from "../../../core/utils";
+import { makeOverwrite } from '../../../core/utils';
 
 const initialState = {
   list: [
-    { text: "But Pepsi", status: todoStatus.todo, id: 1 },
-    { text: "Paint the car", status: todoStatus.todo, id: 2 },
-    { text: "Write a sham", status: todoStatus.Done, id: 3 },
+    { text: 'But Pepsi', status: todoStatus.todo, id: 1 },
+    { text: 'Paint the car', status: todoStatus.todo, id: 2 },
+    { text: 'Write a sham', status: todoStatus.Done, id: 3 },
     { text: "Don't sleep tonight", status: todoStatus.todo, id: 4 },
   ],
 };

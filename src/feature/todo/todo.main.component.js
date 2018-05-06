@@ -1,8 +1,8 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import { View } from 'react-native';
 
-import { TodoForm } from "./components/todo-form";
-import { TodoItem } from "./components/todo-item";
+import { TodoForm } from './components/todo-form';
+import { TodoItem } from './components/todo-item';
 
 const renderTodoItems = (items, toggleTodo) =>
   items.map(item => (
@@ -18,7 +18,7 @@ const renderTodoItems = (items, toggleTodo) =>
 export const Todo = ({ list, addTodo, toggleTodo }) => (
   <View>
     <TodoForm onTodoSubmit={addTodo} />
-    <View style={{ flexDirection: "column", paddingTop: 10 }}>
+    <View style={{ flexDirection: 'column', paddingTop: 10 }}>
       {renderTodoItems(list, toggleTodo)}
     </View>
   </View>

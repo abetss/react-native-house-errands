@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { View, Text, TextInput, StyleSheet, Animated } from "react-native";
+import React, { Component } from 'react';
+import { View, Text, TextInput, StyleSheet, Animated } from 'react-native';
 
 export class TodoForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = { text: '' };
   }
 
   render() {
@@ -22,7 +22,7 @@ export class TodoForm extends React.Component {
 
   onTodoSubmit = () => {
     this.props.onTodoSubmit(this.state.text);
-    this.setState({ text: "" });
+    this.setState({ text: '' });
   };
 
   onChangeText = text => this.setState({ text });
@@ -31,6 +31,6 @@ export class TodoForm extends React.Component {
 const styles = StyleSheet.create({
   input: {
     padding: 1,
-    backgroundColor: "white",
+    backgroundColor: 'white',
   },
 });

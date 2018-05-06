@@ -1,4 +1,4 @@
-import { todoActions } from "./todo.constant";
+import { todoActions } from './todo.constant';
 
 export const addTodo = text => ({
   type: todoActions.add,

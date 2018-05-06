@@ -1,12 +1,12 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
-import { todoStatus } from "../logic";
+import { todoStatus } from '../logic';
 
 export const TodoItem = ({ id, text, status, onPress }) => (
   <TouchableHighlight
     onPress={() => {
-      console.log("clicked");
+      console.log('clicked');
       onPress(id);
     }}
   >
@@ -18,7 +18,7 @@ export const TodoItem = ({ id, text, status, onPress }) => (
           height: 80,
         }}
       >
-        {status === todoStatus.todo ? "[ ]" : "[X]"}
+        {status === todoStatus.todo ? '[ ]' : '[X]'}
       </Text>
       <Text
         style={{
@@ -36,47 +36,47 @@ const ROW_HEIGHT = 40;
 
 const styles = StyleSheet.create({
   row: {
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
     paddingLeft: 5,
     paddingRight: 5,
-    flexDirection: "row",
+    flexDirection: 'row',
     height: ROW_HEIGHT,
   },
   timeline: {
     height: ROW_HEIGHT,
     width: 8,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   timelineVerticalLink: {
     height: ROW_HEIGHT,
     width: 1,
-    backgroundColor: "#526373",
-    justifyContent: "center",
+    backgroundColor: '#526373',
+    justifyContent: 'center',
   },
   icon: {
-    color: "#e7d629",
-    backgroundColor: "transparent",
-    position: "absolute",
-    alignItems: "center",
+    color: '#e7d629',
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    alignItems: 'center',
   },
   content: {
     flex: 1,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "flex-start",
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
     paddingRight: 10,
     paddingLeft: 10,
     paddingTop: 10,
   },
   text: {
     fontSize: 17,
-    fontWeight: "500",
-    color: "white",
+    fontWeight: '500',
+    color: 'white',
   },
   time: {
     fontSize: 10,
-    fontWeight: "400",
-    color: "#828B7B",
+    fontWeight: '400',
+    color: '#828B7B',
   },
 });

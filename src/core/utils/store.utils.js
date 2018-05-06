@@ -1,4 +1,4 @@
-import { bindActionCreators } from "redux";
+import { bindActionCreators } from 'redux';
 
 export const mapDispatchers = (dispatchers: Map<Function>) => (
   dispatch: Function,
