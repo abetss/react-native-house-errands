@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { TabNavigator, TabBarBottom } from "react-navigation";
 
-import { TodoMain } from "../todo";
+import { TodoContainer } from "../todo";
 
 const Profile = props => (
   <View>
@@ -15,7 +15,7 @@ const Profile = props => (
 
 export default TabNavigator(
   {
-    Todo: { screen: TodoMain },
+    Todo: { screen: Profile },
     Profile: { screen: Profile },
   },
   {

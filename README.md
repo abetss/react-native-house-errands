@@ -1,4 +1,4 @@
-[] add store
+[X] add store
 [] add navigation
 [] add a modal
 [] update the todo state by swapping

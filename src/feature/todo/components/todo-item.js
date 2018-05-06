@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableHighlight } from "react-native";
 
-import { TODO_STATUS } from "../todo.constants";
+import { todoStatus } from "../logic";
 
 export const TodoItem = ({ id, text, status, onPress }) => (
   <TouchableHighlight
@@ -18,7 +18,7 @@ export const TodoItem = ({ id, text, status, onPress }) => (
           height: 80,
         }}
       >
-        {status === TODO_STATUS.TODO ? "[ ]" : "[X]"}
+        {status === todoStatus.todo ? "[ ]" : "[X]"}
       </Text>
       <Text
         style={{
