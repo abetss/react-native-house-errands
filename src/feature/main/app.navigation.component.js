@@ -3,8 +3,6 @@ import { Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
-import { TodoContainer } from '../todo';
-
 const Profile = props => (
   <View>
     <View style={{ flexDirection: 'column', paddingTop: 10 }}>

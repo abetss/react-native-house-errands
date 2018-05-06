@@ -1,28 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StackNavigator } from 'react-navigation';
-import { Container, Content, Text } from 'native-base';
+import { DrawerNavigator } from 'react-navigation';
 import { Font, AppLoading } from 'expo';
 
+import { SideBar } from './components';
+
 import { TodoScreen } from '../todo';
+import { ProfileScreen } from '../profile';
 
-const ProfileScreen = props => (
-  <container>
-    <content style={{ flexDirection: 'column', paddingTop: 10 }}>
-      <Text>I'm Abtin Ghods</Text>
-    </content>
-  </container>
+const AppRouter = DrawerNavigator(
+  {
+    Todo: { screen: TodoScreen },
+    Profile: { screen: ProfileScreen },
+  },
+  {
+    contentComponent: props => <SideBar {...props} />,
+  },
 );
-
-// const Navigator = StackNavigator(
-//   {
-//     Todo: { screen: TodoMain },
-//     Profile: { screen: Profile },
-//   },
-//   {
-//     initialRouteName: "Todo",
-//   },
-// );
 
 export class AppContainer extends React.Component {
   constructor() {
@@ -43,6 +36,6 @@ export class AppContainer extends React.Component {
     if (!this.state.isReady) {
       return <AppLoading />;
     }
-    return <TodoScreen />;
+    return <AppRouter />;
   }
 }

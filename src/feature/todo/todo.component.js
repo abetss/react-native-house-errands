@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import { List } from 'native-base';
 
 import { TodoForm } from './components/todo-form';
@@ -18,8 +17,8 @@ const renderTodoItems = (items, toggleTodo) =>
     />
   ));
 
-export const Todo = ({ list, addTodo, toggleTodo }) => (
-  <MainLayout title="Todo">
+export const Todo = ({ list, addTodo, toggleTodo, navigation }) => (
+  <MainLayout title="Todo" navigation={navigation}>
     <TodoForm onTodoSubmit={addTodo} />
     <List
       style={{

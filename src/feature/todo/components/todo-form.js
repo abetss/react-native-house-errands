@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, Animated } from 'react-native';
-import { Item, Input, Icon, Form, Label } from 'native-base';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Item, Input, Form, Label } from 'native-base';
 
 export class TodoForm extends React.Component {
   constructor(props) {
