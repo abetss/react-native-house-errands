@@ -1,16 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import { Container, Content, Text } from 'native-base';
+import { Font, AppLoading } from 'expo';
 
-import { Main } from '../../components/layout';
-import { TodoContainer } from '../todo';
+import { TodoScreen } from '../todo';
 
-const Profile = props => (
-  <View>
-    <View style={{ flexDirection: 'column', paddingTop: 10 }}>
+const ProfileScreen = props => (
+  <container>
+    <content style={{ flexDirection: 'column', paddingTop: 10 }}>
       <Text>I'm Abtin Ghods</Text>
-    </View>
-  </View>
+    </content>
+  </container>
 );
 
 // const Navigator = StackNavigator(
@@ -24,12 +25,24 @@ const Profile = props => (
 // );
 
 export class AppContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isReady: false,
+    };
+  }
+  async componentWillMount() {
+    await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      Ionicons: require('native-base/Fonts/Ionicons.ttf'),
+    });
+    this.setState({ isReady: true });
+  }
   render() {
-    return (
-      <Main>
-        <Text>Todo</Text>
-        <TodoContainer />
-      </Main>
-    );
+    if (!this.state.isReady) {
+      return <AppLoading />;
+    }
+    return <TodoScreen />;
   }
 }

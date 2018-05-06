@@ -6,7 +6,7 @@ const initialState = {
   list: [
     { text: 'But Pepsi', status: todoStatus.todo, id: 1 },
     { text: 'Paint the car', status: todoStatus.todo, id: 2 },
-    { text: 'Write a sham', status: todoStatus.Done, id: 3 },
+    { text: 'Write a sham', status: todoStatus.done, id: 3 },
     { text: "Don't sleep tonight", status: todoStatus.todo, id: 4 },
   ],
 };

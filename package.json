@@ -1,13 +1,13 @@
 {
-  "name": "HouseErrands",
+  "name": "house-errands",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.2.3",
+    "color": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.8.0",
     "eslint-config-react-app": "^2.0.1",
-    "eslint-plugin-flowtype": "^2.46.2",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.3.1",
@@ -16,6 +16,7 @@
     "flow": "^0.2.3",
     "flow-bin": "^0.69.0",
     "jest-expo": "26.0.0",
+    "lodash": "^4.17.10",
     "prettier": "^1.12.0",
     "react-native-scripts": "1.13.1",
     "react-test-renderer": "16.3.0-alpha.1",
@@ -41,7 +42,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^6.3.1",
-    "expo": "^26.0.0",
+    "expo": "^27.0.1",
     "native-base": "^2.4.3",
     "ramda": "^0.25.0",
     "react": "16.3.0-alpha.1",

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, StyleSheet, Animated } from 'react-native';
+import { Item, Input, Icon, Form, Label } from 'native-base';
 
 export class TodoForm extends React.Component {
   constructor(props) {
@@ -10,13 +11,18 @@ export class TodoForm extends React.Component {
   render() {
     const { text } = this.state;
     return (
-      <TextInput
-        value={text}
-        placeholder="Todo"
-        onChangeText={this.onChangeText}
-        onSubmitEditing={this.onTodoSubmit}
-        style={styles.input}
-      />
+      <Form>
+        <Item floatingLabel>
+          <Label>To do</Label>
+          <Input
+            name="todo"
+            value={text}
+            onChangeText={this.onChangeText}
+            onSubmitEditing={this.onTodoSubmit}
+            style={styles.input}
+          />
+        </Item>
+      </Form>
     );
   }
 
@@ -29,8 +35,5 @@ export class TodoForm extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  input: {
-    padding: 1,
-    backgroundColor: 'white',
-  },
+  input: {},
 });
